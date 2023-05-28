@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card mt-5" style="width: auto">
+        <div class="text-center todoBox mx-3 my-3">
+          <h3 class="">ToDo App</h3>
+          <input
+            type="text"
+            class="txt-box mx-1"
+            placeholder="Add your new todo"
+          />
+          <input
+            type="submit"
+            value="Add"
+            class="Add-btn fw-bold main-btn primary-btn"
+          />
+
+          <p class="msg text-center text-danger"></p>
+        </div>
+
+        <ol class="list-group list-group-flush todo-list list-unstyled"></ol>
+        <input
+          type="submit"
+          value="Clear All"
+          class="clear fw-bold main-btn secondary-btn d-none"
+        />
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
