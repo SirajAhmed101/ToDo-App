@@ -17,6 +17,7 @@ add.addEventListener("click", () => {
     txt.value = "";
     add.value = "Add";
     isEdited = false;
+    saveTask();
   } else {
     alertMsg.innerText = "Please Enter Your Task";
     setTimeout(() => {
@@ -27,13 +28,13 @@ add.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
   toDoTask.innerHTML = "";
-  clear.classList.add("d-none");
+  localStorage.clear();
 });
 
 function addTask() {
   toDoTask.innerHTML += `
   <div class="d-flex justify-content-between align-items-center border-bottom px-3 task-list">
-      <li class="fs-3 px-3" >${txt.value}</li>
+      <li class="fs-3 px-3 todo-task" >${txt.value}</li>
       <div class="update-btns">
           <i class="fas fa-edit fs-2 edit-btn"></i>
           <i class="fas fa-trash fs-2 del-btn"></i>
@@ -42,7 +43,7 @@ function addTask() {
 
 </div>`;
   txt.value = "";
-  clear.classList.remove("d-none");
+  saveTask();
 }
 
 toDoTask.addEventListener("click", (e) => {
@@ -60,6 +61,7 @@ toDoTask.addEventListener("click", (e) => {
 function delToDo(e) {
   e.target.parentElement.parentElement.remove();
   alertMsg.innerText = "Your task delete";
+  saveTask();
 }
 
 function updateToDo(e) {
@@ -72,4 +74,13 @@ function updateToDo(e) {
 function statusToDo(e) {
   currentText = e.target.parentElement.previousElementSibling;
   currentText.classList.toggle("strike");
+  saveTask();
 }
+
+function saveTask() {
+  localStorage.setItem("data", toDoTask.innerHTML);
+}
+function showTask() {
+  toDoTask.innerHTML = localStorage.getItem("data");
+}
+showTask();

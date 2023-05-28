@@ -144,6 +144,12 @@ p {
   text-decoration: line-through;
 }
 
+.task-list li {
+  display: list-item;
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
 /*Responsive Design*/
 @media (max-width: 1199.5px) {
   h1 {
